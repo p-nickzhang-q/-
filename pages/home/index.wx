@@ -1,0 +1,53 @@
+<template>
+  <view>
+    <ui-tabs index="{{ current1 }}" bindchange="handleChange1">
+        <ui-tab>选项卡一</ui-tab>
+        <ui-tab>选项卡二</ui-tab>
+    </ui-tabs>
+    <swiper class="content" current="{{ current1 }}"  bindchange="handleContentChange1">
+        <swiper-item>
+            <view>内容 1</view>
+        </swiper-item>
+        <swiper-item>
+            <view>内容 2</view>
+        </swiper-item>
+    </swiper>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    navigationBarTitleText: '首页',
+    backgroundColor: '#F4F4F4',
+    navigationBarTextStyle: 'black'
+  },
+  data: {
+    current1: 0,
+  },
+  handleContentChange1 (e) {
+      let current = e.detail.current
+      this.setData({
+        current1:current
+      })
+  },
+  handleChange1 (e) {
+      let index = e.detail.index
+      this.setData({
+        current1:index
+      })
+  }
+}
+</script>
+
+<style lang="less">
+.content{
+  .mix-flex-center();
+}
+.starContent{
+  padding:50px 50px 0px 50px;
+}
+.buttonContent{
+  padding:50px;
+}
+</style>
