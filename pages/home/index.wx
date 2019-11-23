@@ -1,53 +1,62 @@
 <template>
-  <view>
-    <ui-tabs index="{{ current1 }}" bindchange="handleChange1">
-        <ui-tab>选项卡一</ui-tab>
-        <ui-tab>选项卡二</ui-tab>
-    </ui-tabs>
-    <swiper class="content" current="{{ current1 }}"  bindchange="handleContentChange1">
-        <swiper-item>
-            <view>内容 1</view>
-        </swiper-item>
-        <swiper-item>
-            <view>内容 2</view>
-        </swiper-item>
-    </swiper>
+
+  <view class="ruler_wrap">
+    <view class="shift_to">当前生命值为</view>
+    <view class="ruler_win">
+      <ui-ruler height="35" key-line-height="10" line-height="5" min="0" max="100" key-step="10" step="1" line-width="1" step-width="5" pointer-width="1" value="{{hp}}" value-style="{{valueStyle}}"></ui-ruler>
+    </view>
   </view>
+
 </template>
 
 <script>
 export default {
   config: {
-    navigationBarTitleText: '首页',
-    backgroundColor: '#F4F4F4',
-    navigationBarTextStyle: 'black'
+    navigationBarTitleText: "首页",
+    backgroundColor: "#F4F4F4",
+    navigationBarTextStyle: "black",
+    usingComponents: {}
   },
   data: {
-    current1: 0,
+    hp: 0,
+    valueStyle: {
+      color: "#F6620F",
+      fontSize: "28px",
+      top: "-54px",
+      borderBottom: "1px dashed #E0E0E0",
+      padding: "0 10px",
+      left: "50%",
+      transform: "translate(-50%, 0%)"
+    }
   },
-  handleContentChange1 (e) {
-      let current = e.detail.current
-      this.setData({
-        current1:current
-      })
-  },
-  handleChange1 (e) {
-      let index = e.detail.index
-      this.setData({
-        current1:index
-      })
+  onReady() {},
+  onLaunch() {
+    system.attachInfo();
   }
-}
+};
 </script>
 
 <style lang="less">
-.content{
-  .mix-flex-center();
-}
-.starContent{
-  padding:50px 50px 0px 50px;
-}
-.buttonContent{
-  padding:50px;
+.ruler_wrap {
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+  .shift_to {
+    text-align: center;
+    font-size: 14px;
+    color: #969696;
+    margin-bottom: 50px;
+  }
+  .ruler_win {
+    .mix-1px(0, 0, 1, 0, #d6d6d6);
+  }
+
+  ui-ruler {
+    margin-bottom: 20px;
+  }
+  .money {
+    font-size: 20px;
+    color: #385afe;
+  }
 }
 </style>

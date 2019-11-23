@@ -1,0 +1,121 @@
+<template>
+  <view wx:for="{{zhaoshis}}" wx:for-item="item">
+        <ui-row height="20" border-bottom="true">
+          <ui-col align="left" vertical-align="middle" width="10">
+            <text>{{item.xindongli}}</text>
+          </ui-col>
+          <ui-col align="center" vertical-align="middle">
+            <text>{{item.name}}</text>
+          </ui-col>
+          <ui-col align="right" vertical-align="middle" width="10">
+            <text>{{item.menpai}}</text>
+          </ui-col>
+        </ui-row>
+        <ui-row height="250" border-bottom="true">
+            <ui-col width="250">
+                <image src="{{item.img}}" />
+            </ui-col>
+        </ui-row>
+        <ui-row height="20" border-bottom="true">
+           <ui-col align="center" vertical-align="middle">
+             {{item.pailei}}
+           </ui-col>
+        </ui-row>
+        <ui-row height="20" border-bottom="true">
+          <ui-col align="center" vertical-align="middle">
+            <text>{{item.effect}}</text>
+          </ui-col>
+        </ui-row>
+        <ui-row height="50">
+        </ui-row>
+  </view>
+</template>
+
+<script>
+var menpai = {
+  shao_ling: "少林",
+  hua_shan: "华山",
+  wu: "无"
+};
+var pailei = {
+  gong_ji: "攻击",
+  ji_neng: "技能",
+  neng_li: "能力"
+};
+
+export default {
+  config: {
+    navigationBarTitleText: "人物"
+  },
+  data: {
+    zhaoshis: [
+      {
+        xindongli: 1,
+        name: "长拳",
+        img: "http://pic.yupoo.com/nickzhang/975e5ae4/82a97afa.png",
+        effect: "造成5点伤害",
+        pailei: pailei.gong_ji
+      },
+      {
+        xindongli: 1,
+        name: "招架",
+        img: "http://pic.yupoo.com/nickzhang/4adaf27f/7d5038ae.png",
+        effect: "获得4点格挡",
+        pailei: pailei.ji_neng
+      },
+      {
+        xindongli: 2,
+        name: "须弥山神掌",
+        img: "http://pic.yupoo.com/nickzhang/9f608814/6f9df0f7.png",
+        effect:
+          "造成8点伤害，并且置入地方状态栏2张“易伤”卡。（易伤，收到伤害+2）",
+        menpai: menpai.shao_ling,
+        pailei: pailei.gong_ji
+      },
+      {
+        xindongli: 0,
+        name: "独孤九剑",
+        img: "http://pic.yupoo.com/nickzhang/7dd33ee9/7cb55f7b.png",
+        effect: "当手牌都是攻击牌时，才能打出，造成10点伤害",
+        menpai: menpai.hua_shan,
+        pailei: pailei.gong_ji
+      },
+      {
+        xindongli: 1,
+        name: "金刚般若拳",
+        img: "http://pic.yupoo.com/nickzhang/5d311c82/97c177a2.png",
+        effect: "造成你格挡值的伤害",
+        menpai: menpai.shao_ling,
+        pailei: pailei.gong_ji
+      },
+      {
+        xindongli: 1,
+        name: "华山剑",
+        img: "http://pic.yupoo.com/nickzhang/d1eab118/d46b5368.png",
+        effect: "造成6点伤害，并抽取一张牌",
+        menpai: menpai.hua_shan,
+        pailei: pailei.gong_ji
+      },
+      {
+        xindongli: 1,
+        name: "左右互搏",
+        img: "http://pic.yupoo.com/nickzhang/61d7326f/9f9160ec.png",
+        effect: "可作为手中任意一张攻击牌或能力牌使用",
+        menpai: menpai.wu,
+        pailei: pailei.ji_neng
+      },
+      {
+        xindongli: 1,
+        name: "太岳三清峰",
+        img: "http://pic.yupoo.com/nickzhang/2337da63/4fc87a12.png",
+        effect: "造成3点伤害2次",
+        menpai: menpai.hua_shan,
+        pailei: pailei.gong_ji
+      },
+    ]
+  }
+};
+</script>
+
+<style lang="less">
+</style>
