@@ -107,8 +107,24 @@ export default {
       {
         xindongli: 1,
         name: "太岳三清峰",
-        img: "http://pic.yupoo.com/nickzhang/2337da63/4fc87a12.png",
+        img: "http://pic.yupoo.com/nickzhang/d1eab118/d46b5368.png",
         effect: "造成3点伤害2次",
+        menpai: menpai.hua_shan,
+        pailei: pailei.gong_ji
+      },
+      {
+        xindongli: 1,
+        name: "尧白功",
+        img: "http://pic.yupoo.com/nickzhang/09fb4e60/01f47eaa.png",
+        effect: "获得6点格挡，并且消耗一张手牌",
+        menpai: menpai.hua_shan,
+        pailei: pailei.ji_neng
+      },
+      {
+        xindongli: 1,
+        name: "云台指",
+        img: "http://pic.yupoo.com/nickzhang/f8e8b817/37117403.png",
+        effect: "造成6点伤害，并将弃牌堆里的一张放在抽牌堆顶",
         menpai: menpai.hua_shan,
         pailei: pailei.gong_ji
       },
